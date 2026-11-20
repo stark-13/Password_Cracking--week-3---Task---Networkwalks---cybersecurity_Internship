@@ -30,6 +30,7 @@ This repository documents the practical tasks completed during **Week 3** of the
 
 ### Step 1: Target Acquisition
 Obtained the password-protected target file (`My Locked PDF1.pdf`, renamed to `lock.pdf` on the Kali Desktop) provided by Networkwalks.
+![image](screen-shots/protected-pdf-file.png)
 
 ### Step 2: Hash Extraction
 Used `pdf2john` to extract the encryption hash from the PDF and save it into a `.hash` file:
@@ -48,12 +49,15 @@ john --wordlist=/usr/share/wordlists/rockyou.txt lockedpdf.hash
 
 * **Recovered Password:** `good-luck`
 * **Time Elapsed:** ~9 seconds
+![hash](screen-shots/get-hash.png)
+![password](screen-shots/find-password.png)
 
 ### Step 4: Flag Capture
 Unlocked the PDF using the recovered password (`good-luck`) and retrieved the hidden flag:
 * **Flag:** `nw{cybersecurity_flag_captured_2608}`
 
 ---
+![flag](screen-shots/find-the-flag.png)
 
 ## 🌐 Task 2: Password Cracking with Networkwalks Web Tools
 
@@ -64,11 +68,14 @@ To compare CLI workflows with browser-based utilities, the same target PDF was a
 2. Loaded `My Locked PDF1.pdf` (parsed locally in the browser without uploading).
 3. Extracted the `pdf2john` / `hashcat` compatible hash string (Revision: R4, Version: V4, Key length: 128-bit).
 
+![calculator](screen-shots/networkwalks-hash-calculator.png)
+
 ### Step 2: Dictionary Attack
 1. Pasted the extracted `$pdf$...` hash into the [Networkwalks Password Cracker](https://networkwalks.com/password-cracker/).
 2. Ran the dictionary wordlist attack and successfully matched the password: `good-luck`.
 
 ---
+![password](screen-shots/networkwalks-password-find.png)
 
 ## 🛡️ Key Takeaways & Remediation
 
